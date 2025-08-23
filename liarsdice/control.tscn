@@ -1,0 +1,136 @@
+[gd_scene load_steps=2 format=3 uid="uid://dvtaty8ka3yxd"]
+
+[ext_resource type="Script" uid="uid://cmg1y0wqi40go" path="res://control.gd" id="1_0fbet"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_top = 1.0
+offset_bottom = 1.0
+script = ExtResource("1_0fbet")
+
+[node name="PlayerDice" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 593.0
+offset_right = 116.0
+offset_bottom = 625.0
+
+[node name="Dice1" type="Label" parent="PlayerDice"]
+layout_mode = 2
+text = "1"
+
+[node name="Dice2" type="Label" parent="PlayerDice"]
+layout_mode = 2
+text = "1"
+
+[node name="Dice3" type="Label" parent="PlayerDice"]
+layout_mode = 2
+text = "1"
+
+[node name="Dice4" type="Label" parent="PlayerDice"]
+layout_mode = 2
+text = "1"
+
+[node name="Dice5" type="Label" parent="PlayerDice"]
+layout_mode = 2
+text = "1"
+
+[node name="Dice6" type="Label" parent="PlayerDice"]
+layout_mode = 2
+text = "1"
+
+[node name="OpponentDice" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 1007.0
+offset_top = 23.0
+offset_right = 1087.0
+offset_bottom = 55.0
+
+[node name="Dice1" type="Label" parent="OpponentDice"]
+layout_mode = 2
+text = "1"
+
+[node name="Dice2" type="Label" parent="OpponentDice"]
+layout_mode = 2
+text = "1"
+
+[node name="Dice3" type="Label" parent="OpponentDice"]
+layout_mode = 2
+text = "1"
+
+[node name="Dice4" type="Label" parent="OpponentDice"]
+layout_mode = 2
+text = "1"
+
+[node name="Dice5" type="Label" parent="OpponentDice"]
+layout_mode = 2
+text = "1"
+
+[node name="Dice6" type="Label" parent="OpponentDice"]
+layout_mode = 2
+text = "1"
+
+[node name="Bets" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 501.0
+offset_right = 87.0
+offset_bottom = 547.0
+
+[node name="Less" type="Button" parent="Bets"]
+layout_mode = 2
+text = "-"
+
+[node name="Label" type="Label" parent="Bets"]
+layout_mode = 2
+text = "1 x 1"
+
+[node name="More" type="Button" parent="Bets"]
+layout_mode = 2
+text = "+"
+
+[node name="PlaceBet" type="Button" parent="Bets"]
+layout_mode = 2
+text = "Place Bet"
+
+[node name="CallButton" type="Button" parent="Bets"]
+layout_mode = 2
+text = "Call"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 17.0
+offset_right = 215.0
+offset_bottom = 67.0
+
+[node name="HBoxContainer" type="VBoxContainer" parent="HBoxContainer3"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer3/HBoxContainer"]
+layout_mode = 2
+text = "Player Bet"
+
+[node name="CurrentBet" type="Label" parent="HBoxContainer3/HBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="VBoxContainer" parent="HBoxContainer3"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer3/HBoxContainer2"]
+layout_mode = 2
+text = "Opponent Bet"
+
+[node name="CurrentBet" type="Label" parent="HBoxContainer3/HBoxContainer2"]
+layout_mode = 2
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[connection signal="button_down" from="Bets/Less" to="." method="_on_less_button_down"]
+[connection signal="button_down" from="Bets/More" to="." method="_on_more_button_down"]
+[connection signal="button_down" from="Bets/PlaceBet" to="." method="_on_place_bet_button_down"]
+[connection signal="button_down" from="Bets/CallButton" to="." method="_on_call_button_button_down"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
