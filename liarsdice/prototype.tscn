@@ -1,13 +1,13 @@
 [gd_scene load_steps=2 format=3 uid="uid://dvtaty8ka3yxd"]
 
-[ext_resource type="Script" uid="uid://cmg1y0wqi40go" path="res://control.gd" id="1_0fbet"]
+[ext_resource type="Script" uid="uid://cmg1y0wqi40go" path="res://control.gd" id="1_gxbh7"]
 
-[node name="Control" type="Control"]
+[node name="Prototype" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 offset_top = 1.0
 offset_bottom = 1.0
-script = ExtResource("1_0fbet")
+script = ExtResource("1_gxbh7")
 
 [node name="PlayerDice" type="HBoxContainer" parent="."]
 layout_mode = 0

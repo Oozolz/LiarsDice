@@ -11,6 +11,6 @@ config_version=5
 [application]
 
 config/name="LiarsDice"
-run/main_scene="uid://dvtaty8ka3yxd"
+run/main_scene="uid://df6mpb1vqb4co"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"

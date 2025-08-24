@@ -18,6 +18,10 @@ var max_dice = 6
 # Enemy verhalten verbessern:  callen wenn zu viel angesagt wurde
 # Menu neues Spiel ende optionen
 
+func back_to_menu():
+	get_tree().change_scene_to_file("res://main_menu.tscn")
+
+
 func opponent_turn():
 	if bet_dice < max_roll:
 		bet_dice += 1
@@ -59,8 +63,10 @@ func player_call():
 		print("You Win")
 	if player_dice == 0:
 		print("You lose the game")
+		back_to_menu()
 	if opponent_dice == 0:
 		print("You win the game")
+		back_to_menu()
 	$Timer.start()
 
 # Called when the node enters the scene tree for the first time.
@@ -121,7 +127,6 @@ func _on_roll_button_button_down() -> void:
 
 func _on_call_button_button_down() -> void:
 	player_call()
-
 
 func _on_timer_timeout() -> void:
 	_on_roll_button_button_down()
